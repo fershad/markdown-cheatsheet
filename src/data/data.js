@@ -6,7 +6,7 @@ function genData(md, tags = []) {
     resp = {
         'md': md,
         'output': marked(md),
-        'tags': [{...tags}]
+        'tags': [...tags]
     }
 
     return resp;

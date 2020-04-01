@@ -8,6 +8,10 @@
 
     function filter(tag) {
         active = !active;
+        dispatch('filter', {
+                message: tag,
+                state: active
+            })
     }
 </script>
 

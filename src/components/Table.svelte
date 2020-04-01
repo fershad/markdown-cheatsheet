@@ -1,16 +1,48 @@
 <script>
-    import { data } from '../data/data.js'
+    import { data } from '../data/data.js';
+    import Filter from './Filter.svelte';
+    let filterCounter = 0;
+
+    $: filteredData = data;
+
+    function runFilter(tag, state) {
+      // debugger
+      if (state) {
+        filterCounter = filterCounter + 1;
+      } else {
+        filterCounter = filterCounter - 1;
+      }
+
+      if (filterCounter == 1) {
+        filteredData = [];
+      }
+
+      if (filterCounter > 0){
+        data.forEach(d => {
+          let dTags = d.tags;
+          dTags.forEach(t => {
+            if (t == tag.tag) {
+              filteredData.push(d);
+            }
+          })
+        });
+      } else {
+        filteredData = data;
+      }
+    }
 </script>
 
-  <div class="table">
-  {#each data as row}
-      <div class="row">
-        <div class="header-md h4">Type this</div>
-        <div class="header-output h4">To get this</div>
-        <div class="content-md"><pre><code>{row.md}</code></pre></div>
-        <div class="content-output">{@html row.output}</div>
-    </div>
-  {/each}
+<Filter on:filtered={(event) => {runFilter(event.detail.tag, event.detail.state)}}/>
+
+<div class="table">
+{#each filteredData as row}
+    <div class="row" data-tags="{row.tags}">
+      <div class="header-md h4">Type this</div>
+      <div class="header-output h4">To get this</div>
+      <div class="content-md"><pre><code>{row.md}</code></pre></div>
+      <div class="content-output">{@html row.output}</div>
+  </div>
+{/each}
 </div>
 
 <style>

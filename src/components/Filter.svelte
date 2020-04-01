@@ -1,5 +1,12 @@
 <script>
     import Button from './Button.svelte'
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
+    function filtered(tag, state) {
+        console.log(state);
+        dispatch('filtered', {tag, state});
+    }
 </script>
 
 <div class="filter">
@@ -8,13 +15,13 @@
         Filter
     </h2>
     <div class="buttons">
-        <Button tag="heading" icon="format-heading" />
-        <Button tag="list" icon="layout-list" />
-        <Button tag="text" icon="format-text" />
-        <Button tag="link" icon="link" />
-        <Button tag="table" icon="display-grid" />
-        <Button tag="image" icon="image" />
-        <Button tag="code" icon="code" />
+        <Button tag="heading" icon="format-heading" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="list" icon="layout-list" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="text" icon="format-text" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="link" icon="link" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="table" icon="display-grid" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="image" icon="image" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="code" icon="code" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
     </div>
 </div>
 
