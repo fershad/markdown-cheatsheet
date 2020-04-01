@@ -7,14 +7,16 @@
       <div class="row">
         <div class="header-md">Type this</div>
         <div class="header-output">To get this</div>
-        <div class="content-md">{@html row.md}</div>
+        <div class="content-md"><pre><code>{row.md}</code></pre></div>
         <div class="content-output">{@html row.output}</div>
     </div>
   {/each}
 </div>
 
 <style>
-
+pre {
+    white-space: pre-wrap;
+}
 code {
     font-family: 'Source Code Pro', monospace;
     font-display: swap;
