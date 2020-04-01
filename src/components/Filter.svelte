@@ -3,11 +3,18 @@
 </script>
 
 <div class="filter">
-    <input type="text" name="search" id="search">
+    <!-- <input type="text" name="search" id="search"> -->
+    <h2>
+        Filter
+    </h2>
     <div class="buttons">
-        Filter by: 
-        <Button tag="H1" />
-        <Button tag="LI" />
+        <Button tag="heading" icon="format-heading" />
+        <Button tag="list" icon="layout-list" />
+        <Button tag="text" icon="format-text" />
+        <Button tag="link" icon="link" />
+        <Button tag="table" icon="display-grid" />
+        <Button tag="image" icon="image" />
+        <Button tag="code" icon="code" />
     </div>
 </div>
 
@@ -26,7 +33,8 @@
     }
 
     .buttons {
-        display: block;
+        display: flex;
         position: relative;
+        align-items: center;
     }
 </style>
