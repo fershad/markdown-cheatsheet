@@ -43,8 +43,8 @@ let data = [
     genData('Table | Heading | Row\n--- | --- | ---\n This is how | you can make | a table\nAll | text is | left-aligned', ['table']),
     genData('Table | Heading | Row\n--- | --- | :---:\n Use two colons | to center | text', ['table']),
     genData('Table | Heading | Row\n--- | ---: | ---\n Right align | text | one colon', ['table']),
-    genData('![alt text](https://www.shorturl.at/BCGLW "Inline image with alt text")', ['image', 'inline']),
-    genData('![alt text][my-logo]\n\nHere\'s a reference image.\n\n[my-logo]: https://www.shorturl.at/BCGLW "Reference image with alt text"', ['image', 'reference']),
+    genData('![alt text](/images/fershad.png "Inline image with alt text")', ['image', 'inline']),
+    genData('![alt text][my-logo]\n\nHere\'s a reference image.\n\n[my-logo]: /images/fershad.png "Reference image with alt text"', ['image', 'reference']),
 ]
 
 // let data = [
