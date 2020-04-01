@@ -5,6 +5,11 @@
 	--alternate-accent-color: #839AA9;
 	--link-color: #E9562C;
 	--link-hover-color: #839AA9;
+
+	--button-active-color: #839aa936;
+	--table-header-bg: var(--text-color);
+	--table-header-text: var(--background-color);
+	--table-even-rows: #839aa914;
 }
 
 /* 
@@ -39,6 +44,8 @@ body {
 .dark {
 	--text-color: #F2F6F1;
 	--background-color: #2b2c34;
+	--table-header-bg: var(--text-color);
+	--table-header-text: var(--background-color);
 }
 
 a {
