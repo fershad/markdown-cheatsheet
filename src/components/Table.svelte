@@ -21,11 +21,12 @@ code {
     font-family: 'Source Code Pro', monospace;
     font-display: swap;
 }
+
 .table {
   width: 100%;
   margin: 0 auto;
   padding: 1.5em 1em;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .table > .row {

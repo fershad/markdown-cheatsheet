@@ -100,3 +100,12 @@ hr {
 	height: 100%;
 	max-width: 1280px;
   }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+}

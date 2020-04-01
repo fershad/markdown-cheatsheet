@@ -6,7 +6,7 @@ function genData(md, tags = []) {
     resp = {
         'md': md,
         'output': marked(md),
-        'tags': [...tags]
+        'tags': [{...tags}]
     }
 
     return resp;
@@ -19,7 +19,7 @@ let data = [
     genData('#### Heading 4', ['heading', 'h4']),
     genData('##### Heading 5', ['heading', 'h5']),
     genData('###### Heading 6', ['heading', 'h6']),
-    genData('---', ['underline', 'style', 'divider']),
+    genData('---\n\n***\n\n___', ['underline', 'style', 'divider']),
     genData('*italics*\nor\n_italics_', ['italics', 'style', 'decoraction', 'emphasis']),
     genData('**strong**\nor\n__strong__', ['strong', 'bold', 'style', 'decoraction', 'emphasis']),
     genData('**_strong and italics_**\nor\n__*strong and italics*__', ['strong', 'bold', 'italics', 'style', 'decoraction', 'emphasis']),
@@ -28,7 +28,23 @@ let data = [
     genData('1. Item one \n2. Item two\n 1. Indented item', ['list', 'ordered', 'numbered', 'indent']),
     genData('1. Item one\n\n   With a nicely aligned paragraph below. The empty line above is **_required_**.', ['list', 'style', 'alignment']),
     genData('* Bullet\n- Lists\n+ Are easy', ['list', 'unordered', 'bullet']),
-    genData('1. You can even\n   - Combine list styles')
+    genData('1. You can even\n   - Combine list styles', ['list', 'combine', 'bullet', 'ordered', 'unordered', 'numbered', 'indent']),
+    genData('[Link text](https://fershad.com)', ['link', 'hyperlink']),
+    genData('[Link text with title](https://fershad.com "My website")', ['link', 'hyperlink']),
+    genData('https://fershad.com', ['link', 'hyperlink']),
+    genData('<https://fershad.com>', ['link', 'hyperlink']),
+    genData('This [link] is self-referencing.\n\n[link]: https://www.fershad.com', ['link', 'reference']),
+    genData('This [descriptive link][link] is shows different text to the reference.\n\n[link]: https://www.fershad.com', ['link', 'reference']),
+    genData('This [numbered reference][1] is an easy way to repeatly [reference the same link][1].\n\n[1]: https://www.fershad.com', ['link', 'reference']),
+    genData('`Back-ticks`', ['code', 'inline']),
+    genData('```Three back-ticks\ngives a code block```', ['code', 'block']),
+    genData('```javascript\nvar j = "Add a language name to facilitate highlighting.";\nalert(s);\n```', ['code', 'block', 'style']),
+    genData('> You can create blockquotes like this.', ['quotes', 'blockquote']),
+    genData('Table | Heading | Row\n--- | --- | ---\n This is how | you can make | a table\nAll | text is | left-aligned', ['table']),
+    genData('Table | Heading | Row\n--- | --- | :---:\n Use two colons | to center | text', ['table']),
+    genData('Table | Heading | Row\n--- | ---: | ---\n Right align | text | one colon', ['table']),
+    genData('![alt text](https://www.shorturl.at/BCGLW "Inline image with alt text")', ['image', 'inline']),
+    genData('![alt text][my-logo]\n\nHere\'s a reference image.\n\n[my-logo]: https://www.shorturl.at/BCGLW "Reference image with alt text"', ['image', 'reference']),
 ]
 
 // let data = [
