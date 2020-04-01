@@ -13,5 +13,7 @@
 <Footer />
 
 <style>
-	
+	main.container {
+		height: auto;
+	}
 </style>

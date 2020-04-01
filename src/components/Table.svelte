@@ -1,13 +1,16 @@
 <script>
+    import { data } from '../data/data.js'
 </script>
 
   <div class="table">
+  {#each data as row}
       <div class="row">
         <div class="header-md">Type this</div>
         <div class="header-output">To get this</div>
-        <div class="content-md"><code># Heading 1</code></div>
-        <div class="content-output"><h1>Heading 1</h1></div>
+        <div class="content-md">{@html row.md}</div>
+        <div class="content-output">{@html row.output}</div>
     </div>
+  {/each}
 </div>
 
 <style>
@@ -24,9 +27,11 @@ code {
 }
 
 .table > .row {
-  margin: 1em 0;
+  /* margin: 1em 0; */
+  margin: 0;
   display: grid;
   height: 100%;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas: "h-md h-output"
                        "c-md c-output"
 }
@@ -41,6 +46,11 @@ div[class^="header-"], div[class^="content-"]{
 div[class^="header-"] {
     justify-content: center;
 }
+
+.row:not(:first-child) > div[class^="header-"] {
+      display: none;
+}
+
 
 .header-md {
     grid-area: h-md;
