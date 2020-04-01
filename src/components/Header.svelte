@@ -1,11 +1,58 @@
 <script>
     import { fly } from "svelte/transition";
     import { sineOut } from "svelte/easing";
+    import { onMount } from 'svelte';
+    let darkMode;
 
-    let darkMode = false;
+    onMount(() => {
+        darkMode = checkTheme();
+        if (darkMode) {
+            window.document.body.classList.toggle('dark');
+        }
+    })
+    
+    function checkTheme() {
+        if (localStorage.getItem('md-cheatsheet-theme') !== null) {
+            let theme = localStorage.getItem('md-cheatsheet-theme');
+            return setTheme(theme)
+        } else {
+            try {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    localStorage.setItem('md-cheatsheet-theme', 'dark');
+                    return true;
+                } else {
+                    localStorage.setItem('md-cheatsheet-theme', 'light');
+                    return false;
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        
+        return false;
+    }
+
+    function setTheme(t) {
+        if (t == 'light') {
+                return false;
+            } else if (t == 'dark') {
+                console.log('dark')
+                return true;
+            } else {
+                return false;
+            }
+    }
         
     function toggle() {
         darkMode = !darkMode;
+        switch (darkMode) {
+            case true:
+                localStorage.setItem('md-cheatsheet-theme', 'dark');
+                break;
+            case false:
+                localStorage.setItem('md-cheatsheet-theme', 'light');        
+                break;
+        }
         window.document.body.classList.toggle('dark');
     }
 </script>
@@ -58,13 +105,26 @@
     }
 
     .toggle > button {
-        height: 40px;
-        width: 40px;
+        height: 60px;
+        width: 60px;
         display: inline-flex;
-        justify-content: center;
-        align-items: center;
+        background: var(--background-color);
+        border: none;
+        border-radius: 5px;
+        transition: transform 0.3s;
     }
 
+    i {
+        margin: auto;
+    }
+
+    .gg-moon {
+        color: var(--alternate-accent-color);
+    }
+
+    .gg-sun {
+        color: var(--strong-accent-color);
+    }
 
     /* Icons */
 

@@ -7,7 +7,6 @@
     let active = false;
 
     function filter(tag) {
-        console.log(tag);
         active = !active;
     }
 </script>
