@@ -4,7 +4,6 @@
     const dispatch = createEventDispatcher();
 
     function filtered(tag, state) {
-        console.log(state);
         dispatch('filtered', {tag, state});
     }
 </script>

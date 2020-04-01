@@ -1,35 +1,48 @@
 <script>
     import { data } from '../data/data.js';
     import Filter from './Filter.svelte';
-    let filterCounter = 0;
+
+    let filters = [];
 
     $: filteredData = data;
 
     function runFilter(tag, state) {
-      // debugger
       if (state) {
-        filterCounter = filterCounter + 1;
+        filters = [...filters, tag.tag];
       } else {
-        filterCounter = filterCounter - 1;
+        filters = filters.filter((el) => { 
+          return el !== tag.tag 
+        });
       }
 
-      if (filterCounter == 1) {
-        filteredData = [];
-      }
-
-      if (filterCounter > 0){
-        data.forEach(d => {
-          let dTags = d.tags;
-          dTags.forEach(t => {
-            if (t == tag.tag) {
-              filteredData.push(d);
-            }
-          })
+      if (filters.length > 0) {
+        console.log(filters)
+        filteredData = data.filter((el) => {
+          return el.tags.some((t) => { 
+                return filters.indexOf(t) >= 0
+            })
         });
       } else {
         filteredData = data;
       }
-    }
+}
+
+      // if (filterCounter > 0){
+      //   data.forEach(d => {
+      //     let dTags = d.tags;
+      //     dTags.forEach(t => {
+      //       if (t == tag.tag) {
+      //         tempData.push(d);
+      //       }
+      //     })
+      //   });
+        
+      //   filteredData = tempData;
+      // } else {
+      //   tempData = [];
+      //   filteredData = data;
+      // }
+
 </script>
 
 <Filter on:filtered={(event) => {runFilter(event.detail.tag, event.detail.state)}}/>
