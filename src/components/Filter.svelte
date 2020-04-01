@@ -11,7 +11,7 @@
 <div class="filter">
     <!-- <input type="text" name="search" id="search"> -->
     <h2>
-        Filter
+        Show only
     </h2>
     <div class="buttons">
         <Button tag="heading" icon="format-heading" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>

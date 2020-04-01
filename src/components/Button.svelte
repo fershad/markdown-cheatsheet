@@ -4,7 +4,7 @@
 
     export let tag;
     export let icon;
-    let active = false;
+    export let active = false;
 
     function filter(tag) {
         active = !active;
