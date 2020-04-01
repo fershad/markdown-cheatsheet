@@ -1,13 +1,8 @@
 <script>
-	
+	import Header from './components/Header.svelte';
 </script>
 
-<header>
-	<h1>Markdown Cheatsheet</h1>
-	<div class="toggle">
-		<!-- Placeholder for Dark/Light mode toggle -->
-	</div>
-</header>
+<Header />
 
 <main>
 	
