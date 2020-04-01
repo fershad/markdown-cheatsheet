@@ -1,9 +1,16 @@
 <script>
+    import { createEventDispatcher } from 'svelte';
+    const dispatch = createEventDispatcher();
+
     export let tag;
     export let icon;
+
+    function filter(tag) {
+        console.log(tag)
+    }
 </script>
 
-<button data-filter-tag="{tag}"><i class="gg-{icon}"></i></button>
+<button data-filter-tag="{tag}" on:click="{() => filter({tag})}"><i class="gg-{icon}"></i></button>
 
 <style>
 button {

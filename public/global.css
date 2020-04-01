@@ -109,3 +109,11 @@ hr {
 th, td {
     border: 1px solid black;
 }
+
+pre {
+    white-space: pre-wrap;
+}
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-display: swap;
+}

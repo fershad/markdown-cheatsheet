@@ -14,13 +14,6 @@
 </div>
 
 <style>
-pre {
-    white-space: pre-wrap;
-}
-code {
-    font-family: 'Source Code Pro', monospace;
-    font-display: swap;
-}
 
 .table {
   width: 100%;
