@@ -1,6 +1,10 @@
 :root {
-	--background-color: #FFFFFF;
-	--text-color: #000000;
+	--background-color: #F2F6F1;
+	--text-color: #2b2c34;
+	--strong-accent-color: #E9562C;
+	--alternate-accent-color: #839AA9;
+	--link-color: #E9562C;
+	--link-hover-color: #839AA9;
 }
 
 /* 
@@ -23,7 +27,8 @@ html, body {
 }
 
 body {
-	color: #333;
+	background: var(--background-color);
+	color: var(--text-color);
 	margin: 0;
 	padding: 8px;
 	box-sizing: border-box;
@@ -31,17 +36,23 @@ body {
 	font-display: swap;
 }
 
+.dark {
+	--text-color: #F2F6F1;
+	--background-color: #2b2c34;
+}
+
 a {
-	color: rgb(0,100,200);
+	color: var(--link-color);
 	text-decoration: none;
 }
 
 a:hover {
+	color: var(--link-hover-color);
 	text-decoration: underline;
 }
 
 a:visited {
-	color: rgb(0,80,160);
+	color: var(--link-color);
 }
 
 label {

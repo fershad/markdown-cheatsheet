@@ -4,13 +4,15 @@
 
     export let tag;
     export let icon;
+    let active = false;
 
     function filter(tag) {
-        console.log(tag)
+        console.log(tag);
+        active = !active;
     }
 </script>
 
-<button data-filter-tag="{tag}" on:click="{() => filter({tag})}"><i class="gg-{icon}"></i></button>
+<button data-filter-tag="{tag}" on:click="{() => filter({tag})}" class:active><i class="gg-{icon}"></i></button>
 
 <style>
 button {
