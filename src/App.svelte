@@ -1,5 +1,6 @@
 <script>
 	import Header from './components/Header.svelte';
+	import Footer from './components/Footer.svelte';
 </script>
 
 <Header />
@@ -8,9 +9,7 @@
 	
 </main>
 
-<footer>
-	<p>Build by Fershad Irani using Svelte 3. | Github</p>
-</footer>
+<Footer />
 
 <style>
 	
