@@ -19,7 +19,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 1.5em 1em;
-  max-width: 800px;
+  max-width: 1080px;
 }
 
 .table > .row {

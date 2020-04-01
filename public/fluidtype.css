@@ -1,0 +1,99 @@
+:root {
+    --fontSize: calc(12px + 0.698vw); /* The character count on */  
+    --lineHeight: calc(var(--fontSize) * 1.4);
+    --letterSpacing: calc(var(--fontSize) * 0.0015);
+    --fontWeight: 300;
+  }
+
+  body {
+    font-family: 'Oswald', sans-serif;
+  }
+  
+  
+  p, li, b, i, strong, a, mark {
+    font-size: var(--fontSize);
+    line-height: var(--lineHeight);
+    letter-spacing: var(--letterSpacing);
+    font-feature-settings: normal;
+  }
+  
+  p, li , mark, a, blockquote {
+      font-weight: calc(var(--fontWeight)* 1.33);
+  }
+  
+  code {
+    font-size: calc(var(--fontSize) * 1.1);
+    line-height: var(--lineHeight);
+    letter-spacing: var(--letterSpacing); 
+    font-weight: calc(var(--fontWeight)* 1.33);
+  }
+  
+  mark {
+    padding: 0.05vw 0.4vw;
+    border-radius: 2px;
+    font-size: calc(var(--fontSize) * 1.1);
+    letter-spacing: var(--letterSpacing);
+    font-weight: calc(var(--fontWeight)* 1.33);
+    word-break: break-word;
+  }
+  
+  blockquote {
+    font-size: calc(var(--fontSize) * 1.1);
+    letter-spacing: var(--letterSpacing);
+    border-left: 4px solid var(--alternate-accent-color);
+    border-radius: 2px;
+    padding: 2.5vw;
+    margin: 2%;
+  }
+  
+  pre {
+      display: block;
+      /* margin: 0 0 1.5625em; */
+      border-radius: 4px;
+      overflow: auto;
+      padding: 2.5vw;
+      tab-size: 4;
+      -moz-tab-size: 4;
+      -o-tab-size: 4;
+      white-space: pre-wrap;
+      word-break: break-all;
+      font-size: calc(var(--fontSize) * 1.1);
+      letter-spacing: var(--letterSpacing);
+      font-family: 'Source Code Pro', monospace;
+  }
+  
+  h1{
+    font-size: calc(var(--fontSize) * 3);
+    letter-spacing: var(--letterSpacing);
+    font-weight: calc(var(--fontWeight)* 2.66);
+  }
+  
+  h2 {
+    font-size: calc(var(--fontSize) * 2);
+    letter-spacing: var(--letterSpacing);
+    font-weight: calc(var(--fontWeight)* 2.33);
+  }
+  
+  h3 {
+    font-size: calc(var(--fontSize) * 1.750);
+    letter-spacing: var(--letterSpacing);
+    font-weight: calc(var(--fontWeight)* 2);
+  }
+  
+  h4 {
+    font-size: calc(var(--fontSize) * 1.5);
+    letter-spacing: var(--letterSpacing);
+    font-weight: calc(var(--fontWeight)* 1.667);
+  }
+  
+  h5 {
+    font-size: calc(var(--fontSize) * 1.25);
+    letter-spacing: var(--letterSpacing);
+    font-weight: calc(var(--fontWeight)* 1.5);
+  }
+  
+  h6{
+    font-size: calc(var(--fontSize) * 1);
+    letter-spacing: var(--letterSpacing);
+    font-weight: calc(var(--fontWeight)* 1);
+  }
