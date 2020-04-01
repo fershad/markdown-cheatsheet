@@ -14,12 +14,13 @@
 
 <button data-filter-tag="{tag}" on:click="{() => filter({tag})}" class:active><i class="gg-{icon}"></i></button>
 
-<style>
+<style lang="scss">
 button {
     height: 40px;
     width: 40px;
-    display: inline-block;
     display: inline-flex;
+    text-decoration-color: #a2dffb;
+    text-decoration: underline;
 }
 
 i {
