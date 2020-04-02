@@ -1,5 +1,6 @@
 <script>
     import Button from './Button.svelte'
+    import { filters } from '../store.js';
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
 
@@ -10,10 +11,17 @@
 
 <div class="filter">
     <!-- <input type="text" name="search" id="search"> -->
-    <h2>
+    <!-- <h2>
         Show only
-    </h2>
+    </h2> -->
     <div class="buttons">
+        <span class="filters">
+            {#if $filters.length > 0}
+                Filters: Showing {$filters.join(', ')}
+            {:else}
+                 Filters: Showing all
+            {/if}
+        </span>
         <Button tag="heading" label="headings" icon="format-heading" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
         <Button tag="list" label="lists" icon="layout-list" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
         <Button tag="text" label="text" icon="format-text" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
@@ -31,6 +39,8 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
+        margin-top: 3em;
     }
 
     input[type="text"] {
@@ -42,5 +52,17 @@
         display: flex;
         position: relative;
         align-items: center;
+        padding: 3.4em 0 1em 0;
+        border: 2px solid var(--table-header-bg);
+        border-radius: 5px;
+    }
+
+    .buttons > span {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        background: var(--table-header-bg);
+        color: var(--table-header-text);
+        padding: 2px 20px;
     }
 </style>

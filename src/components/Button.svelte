@@ -4,7 +4,7 @@
 
     export let tag;
     export let icon;
-    export let lable;
+    export let label;
     export let active = false;
 
     function filter(tag) {
@@ -16,7 +16,7 @@
     }
 </script>
 
-<button data-filter-tag="{tag}" on:click="{() => filter({tag})}" class:active aria-label="Show {lable}">
+<button data-filter-tag="{tag}" on:click="{() => filter({tag})}" class:active aria-label="Show {label}">
     <i class="gg-{icon}"></i>
 </button>
 
