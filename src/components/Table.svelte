@@ -29,76 +29,93 @@
 
 <Filter on:filtered={(event) => {runFilter(event.detail.tag, event.detail.state)}}/>
 
-<div class="table">
-{#each filteredData as row}
-    <div class="row" data-tags="{row.tags}">
-      <div class="header-md h4">Type this</div>
-      <div class="header-output h4">To get this</div>
-      <div class="content-md"><pre><code>{row.md}</code></pre></div>
-      <div class="content-output">{@html row.output}</div>
+<div class="data">
+{#each filteredData as data}
+    <div class="item" data-tags="{data.tags}">
+
+      <div class="md">
+        <div class="main"><code>{data.md}</code></div>
+        {#if data.alternate }
+          {#each data.alternate as alt} 
+            <div class="alt"><code>{alt}</code></div>
+          {/each}
+        {/if}
+      </div>
+      <div class="result"><span class="output">{@html data.output}</span></div>
   </div>
 {/each}
 </div>
 
-<style>
-
-.table {
-  width: 100%;
-  margin: 0 auto;
-  padding: 1.5em 1em;
-  max-width: 1080px;
-}
-
-.table > .row {
-  /* margin: 1em 0; */
-  margin: 0;
-  display: grid;
-  height: 100%;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-areas: "h-md h-output"
-                       "c-md c-output"
-}
-
-div[class^="header-"], div[class^="content-"]{
-    padding: 0.5rem 1rem;
-    display: flex;
-    align-items: center;
-}
-
-div[class^="header-"] {
-    justify-content: center;
-    font-weight: 600;
-    background-color: var(--table-header-bg);
-    color: var(--table-header-text);
-}
-
-.row > .header-md {
-  border-right: 2px solid var(--table-header-text);
-}
-
-.row > .content-md {
-  border-right: 2px solid var(--text-color);
-}
-
-.row:not(:first-child) > div[class^="header-"] {
-      display: none;
-}
-
-.row:nth-of-type(even) {
-  background-color: var(--table-even-rows);
-}
-
-
-.header-md {
-    grid-area: h-md;
+<style lang="scss">
+  .data {
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.5em 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 1.25em;
+    grid-row-gap: 1em;
   }
-.header-output {
-    grid-area: h-output;
-  }
-.content-md {
-    grid-area: c-md;
-  }
-.content-output {
-    grid-area: c-output;
+
+  .item {
+    border: 2px solid var(--text-color);
+    width: 100%;
+    max-width: 400px;
+    border: 1em 1.25em;
+    border-radius: 5px;
+    overflow: hidden;
+
+   .result {
+      padding: 0.5rem 1rem;
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .output:before, .main:before {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        padding: 5px 15px;
+      }
+
+    .md {
+      display: flex;
+      border-bottom: 2px solid var(--text-color);
+
+      .main, .alt {
+        padding: 3em;
+      }
+
+      .main {
+        // border: 2px solid var(--text-color);
+        width: 100%;
+        position: relative;
+      }
+
+      .main:before {
+        content: 'Markdown';
+        background: var(--strong-accent-color);
+        color: #FFFFFF;
+      }
+    }
+    .output:before {
+        content: 'Result';
+        background: var(--alternate-accent-color);
+        color: #FFFFFF;
+      }
+
+    .result, .output {
+          width: 100%;
+    }
+
+    .output > * {
+      margin: 0;
+    }
+
+    .output {
+      display: inline-flex;
+      align-items: center;
+    }
   }
 </style>

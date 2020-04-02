@@ -29,6 +29,7 @@
         <Button tag="table" label="tables" icon="display-grid" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
         <Button tag="image" label="images" icon="image" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
         <Button tag="code" label="code" icon="code" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="underline" label="underline" icon="border-style-solid" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
     </div>
 </div>
 
