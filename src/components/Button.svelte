@@ -4,6 +4,7 @@
 
     export let tag;
     export let icon;
+    export let lable;
     export let active = false;
 
     function filter(tag) {
@@ -15,7 +16,9 @@
     }
 </script>
 
-<button data-filter-tag="{tag}" on:click="{() => filter({tag})}" class:active><i class="gg-{icon}"></i></button>
+<button data-filter-tag="{tag}" on:click="{() => filter({tag})}" class:active aria-label="Show {lable}">
+    <i class="gg-{icon}"></i>
+</button>
 
 <style lang="scss">
 $alt-accent: var(--alternate-accent-color);

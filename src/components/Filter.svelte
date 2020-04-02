@@ -14,13 +14,13 @@
         Show only
     </h2>
     <div class="buttons">
-        <Button tag="heading" icon="format-heading" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
-        <Button tag="list" icon="layout-list" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
-        <Button tag="text" icon="format-text" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
-        <Button tag="link" icon="link" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
-        <Button tag="table" icon="display-grid" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
-        <Button tag="image" icon="image" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
-        <Button tag="code" icon="code" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="heading" label="headings" icon="format-heading" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="list" label="lists" icon="layout-list" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="text" label="text" icon="format-text" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="link" label="links" icon="link" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="table" label="tables" icon="display-grid" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="image" label="images" icon="image" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
+        <Button tag="code" label="code" icon="code" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
     </div>
 </div>
 

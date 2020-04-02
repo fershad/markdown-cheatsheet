@@ -61,13 +61,21 @@
     <div class="container">
         <div class="heading-wrapper">
     	    <h1 class="header-title">Markdown Cheatsheet</h1>
-            <a href="https://www.markdownguide.org/getting-started/">What is Markdown?</a>
+            <a href="https://www.markdownguide.org/getting-started/" class="bold">What is Markdown?</a>
         </div>
     	<span class="toggle" on:click={toggle}>
             {#if darkMode }
-                <button in:fly="{{ x: 100, easing: sineOut, duration: 300, delay: 310 }}" out:fly="{{ x: 100, easing: sineOut, duration: 300 }}"><i class="gg-moon"></i></button>
+                <button in:fly="{{ x: 100, easing: sineOut, duration: 300, delay: 310 }}" 
+                        out:fly="{{ x: 100, easing: sineOut, duration: 300 }}"
+                        aria-label="Switch to light mode">
+                    <i class="gg-moon"></i>
+                </button>
             {:else}
-                <button in:fly="{{ x: -100, easing: sineOut, duration: 300, delay: 310 }}" out:fly="{{ x: -100, easing: sineOut, duration: 300 }}"><i class="gg-sun"></i></button>
+                <button in:fly="{{ x: -100, easing: sineOut, duration: 300, delay: 310 }}" 
+                        out:fly="{{ x: -100, easing: sineOut, duration: 300 }}"
+                        aria-label="Switch to dark mode">
+                        <i class="gg-sun"></i>
+                </button>
             {/if}
         </span>
     </div>

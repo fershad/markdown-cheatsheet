@@ -123,3 +123,7 @@
 .bold {
     font-weight: 600;
 }
+
+small, .small {
+  font-size: calc(var(--fontSize) * 0.8);
+}
