@@ -3,10 +3,13 @@
     --lineHeight: calc(var(--fontSize) * 1.4);
     --letterSpacing: calc(var(--fontSize) * 0.0015);
     --fontWeight: 300;
+    --main-font-family: 'Oswald', sans-serif;
+    --styled-font-family: 'Permanent Marker', cursive;
+    --fixed-font-family: 'Source Code Pro', monospace;
   }
 
   body {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--main-font-family);
   }
   
   
@@ -26,6 +29,7 @@
     line-height: var(--lineHeight);
     letter-spacing: var(--letterSpacing); 
     font-weight: calc(var(--fontWeight)* 1.33);
+    font-family: var(--fixed-font-family);
   }
   
   mark {
@@ -59,7 +63,7 @@
       word-break: break-all;
       font-size: calc(var(--fontSize) * 1.1);
       letter-spacing: var(--letterSpacing);
-      font-family: 'Source Code Pro', monospace;
+      font-family: var(--fixed-font-family);
   }
   
   h1{
@@ -97,3 +101,25 @@
     letter-spacing: var(--letterSpacing);
     font-weight: calc(var(--fontWeight)* 1);
   }
+
+.fixed {
+    font-family: var(--fixed-font-family);
+    font-size: calc(var(--fontSize) * 1);
+    line-height: var(--lineHeight);
+}
+
+.quiet {
+    color: var(--quiet-color);
+}
+
+.loud {
+    color: var(--strong-accent-color);
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 600;
+}

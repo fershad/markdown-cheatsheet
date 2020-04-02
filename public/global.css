@@ -5,6 +5,7 @@
 	--alternate-accent-color: #839AA9;
 	--link-color: #E9562C;
 	--link-hover-color: #839AA9;
+	--quiet-color: #839aa936;
 
 	--button-active-color: #839aa936;
 	--table-header-bg: var(--text-color);
@@ -116,6 +117,13 @@ hr {
 	height: 100%;
 	max-width: 1280px;
   }
+
+@media (min-width: 1280px) {
+	.container {
+		max-width: 90%;
+		width: 90%;
+	}
+}
 
   table {
     width: 100%;
