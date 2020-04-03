@@ -1,47 +1,66 @@
 <script>
+    import { onMount, afterUpdate } from "svelte/internal";
     import { data } from '../data/data.js';
     import { filters } from '../store.js';
     import Filter from './Filter.svelte';
 
-    $: filteredData = data;
     $filters = [];
+
+    const newData = data.map((d) => {
+      return {
+        ...d,
+        tags: d.tags.toString().replace(',', ' ')
+      }
+    })
 
     function runFilter(tag, state) {
       if (state) {
-        $filters = [...$filters, tag.tag];
+        $filters = [...$filters, '.' + tag.tag];
       } else {
         $filters = $filters.filter((el) => { 
-          return el !== tag.tag 
+          return el !== '.' + tag.tag 
         });
       }
 
       if ($filters.length > 0) {
-        filteredData = data.filter((el) => {
-          return el.tags.some((t) => { 
-                return $filters.indexOf(t) >= 0
-            })
-        });
+        console.log($filters);
+        iso.arrange({ filter: $filters.toString() });
       } else {
-        filteredData = data;
+        iso.arrange({ filter: '*' });
       }
 }
+
+  import Isotope from "isotope-layout";
+
+  let grid;
+  let iso;
+
+  onMount(async () => {
+    iso = new Isotope( grid, {
+      itemSelector: '.item',
+      layoutMode: 'fitRows'
+    });
+  });
+
+  afterUpdate(() => {
+    
+	});
 </script>
 
 <Filter on:filtered={(event) => {runFilter(event.detail.tag, event.detail.state)}}/>
 
-<div class="data">
-{#each filteredData as data}
-    <div class="item" data-tags="{data.tags}">
-
+<div class="data" bind:this={grid}>
+{#each newData as d}
+    <div class="item grid-sizer {d.tags}">
       <div class="md">
-        <div class="main"><code>{data.md}</code></div>
-        {#if data.alternate }
-          {#each data.alternate as alt} 
-            <div class="alt"><code>{alt}</code></div>
+        <div class="main"><pre><code>{d.md}</code></pre></div>
+        {#if d.alternate }
+          {#each d.alternate as alt} 
+            <div class="alt"><pre><code>{alt}</code></pre></div>
           {/each}
         {/if}
       </div>
-      <div class="result"><span class="output">{@html data.output}</span></div>
+      <div class="result"><span class="output">{@html d.output}</span></div>
   </div>
 {/each}
 </div>
@@ -51,20 +70,17 @@
     width: 100%;
     margin: 0 auto;
     padding: 1.5em 1em;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-column-gap: 1.25em;
-    grid-row-gap: 1em;
+  }
+
+  .grid-sizer {
+    width: 20%;
   }
 
   .item {
     border: 2px solid var(--text-color);
-    width: 100%;
-    max-width: 400px;
-    border: 1em 1.25em;
+    margin: 1em 1.25em;
     border-radius: 5px;
     overflow: hidden;
-
    .result {
       padding: 0.5rem 1rem;
       display: inline-flex;
@@ -81,6 +97,7 @@
 
     .md {
       display: flex;
+      flex-direction: column;
       border-bottom: 2px solid var(--text-color);
 
       .main, .alt {
