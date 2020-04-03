@@ -142,3 +142,7 @@ code {
     font-family: 'Source Code Pro', monospace;
     font-display: swap;
 }
+
+.output hr {
+	align-self: flex-end;
+}
