@@ -1,105 +1,119 @@
 :root {
-    --fontSize: calc(12px + 0.698vw); /* The character count on */  
+    --fontSize: calc(17px); /* The character count on */  
     --lineHeight: calc(var(--fontSize) * 1.4);
     --letterSpacing: calc(var(--fontSize) * 0.0015);
-    --fontWeight: 300;
-    --main-font-family: 'Oswald', sans-serif;
+    --fontWeight: 400;
+    --main-font-family: 'Nunito Sans', sans-serif;
     --styled-font-family: 'Permanent Marker', cursive;
     --fixed-font-family: 'Source Code Pro', monospace;
   }
 
   body {
-    font-family: var(--main-font-family);
-  }
-  
-  
-  p, li, b, i, strong, a, mark {
     font-size: var(--fontSize);
+    font-family: var(--main-font-family);
+    font-weight: var(--fontWeight);
     line-height: var(--lineHeight);
-    letter-spacing: var(--letterSpacing);
-    font-feature-settings: normal;
+    font-display: swap;
+}
+
+  .h1, h1,
+  .h2, h2,
+  .h3, h3,
+  .h4, h4,
+  .h5, h5,
+  .h6, h6 {
+      font-family: var(--main-font-family);
+      font-weight: calc(var(--fontWeight)*1.1);
   }
   
-  p, li , mark, a, blockquote {
-      font-weight: calc(var(--fontWeight)* 1.33);
+  .h1, h1,
+  .h2, h2 {
+      line-height: 1.1;
   }
   
-  code {
-    font-size: calc(var(--fontSize) * 1.1);
-    line-height: var(--lineHeight);
-    letter-spacing: var(--letterSpacing); 
-    font-weight: calc(var(--fontWeight)* 1.33);
-    font-family: var(--fixed-font-family);
+  .h3, h3,
+  .h4 h4 {
+      line-height: 1.3;
   }
   
-  mark {
-    padding: 0.05vw 0.4vw;
-    border-radius: 2px;
-    font-size: calc(var(--fontSize) * 1.1);
-    letter-spacing: var(--letterSpacing);
-    font-weight: calc(var(--fontWeight)* 1.33);
-    word-break: break-word;
+  .h1, h1 {
+      font-size: 3.052em;
+      letter-spacing: -2px;
+      margin-top: 0;
   }
   
-  blockquote {
-    font-size: calc(var(--fontSize) * 1.1);
-    letter-spacing: var(--letterSpacing);
-    border-left: 4px solid var(--alternate-accent-color);
-    border-radius: 2px;
-    padding: 2.5vw;
-    margin: 2%;
+  .h2, h2 {
+      font-size: 2.441em;
+      letter-spacing: -1px;
   }
   
-  pre {
-      display: block;
-      /* margin: 0 0 1.5625em; */
-      border-radius: 4px;
-      overflow: auto;
-      padding: 2.5vw;
-      tab-size: 4;
-      -moz-tab-size: 4;
-      -o-tab-size: 4;
-      white-space: pre-wrap;
-      word-break: break-all;
-      font-size: calc(var(--fontSize) * 1.1);
-      letter-spacing: var(--letterSpacing);
-      font-family: var(--fixed-font-family);
+  .h3, h3 {
+      font-size: 1.953em;
   }
   
-  h1{
-    font-size: calc(var(--fontSize) * 3);
-    letter-spacing: var(--letterSpacing);
-    font-weight: calc(var(--fontWeight)* 2.66);
+  .h4, h4 {
+      font-size: 1.563em;
   }
   
-  h2 {
-    font-size: calc(var(--fontSize) * 2);
-    letter-spacing: var(--letterSpacing);
-    font-weight: calc(var(--fontWeight)* 2.33);
+  .h5, h5 {
+      font-size: 1.25em;
   }
   
-  h3 {
-    font-size: calc(var(--fontSize) * 1.750);
-    letter-spacing: var(--letterSpacing);
-    font-weight: calc(var(--fontWeight)* 2);
+  .h6, h6 {
+      font-size: 1em;
   }
   
-  h4 {
-    font-size: calc(var(--fontSize) * 1.5);
-    letter-spacing: var(--letterSpacing);
-    font-weight: calc(var(--fontWeight)* 1.667);
+  .block-margins {
+      margin: 1em 0;
   }
   
-  h5 {
-    font-size: calc(var(--fontSize) * 1.25);
-    letter-spacing: var(--letterSpacing);
-    font-weight: calc(var(--fontWeight)* 1.5);
+  .unordered-list {
+      list-style-type: disc;
   }
   
-  h6{
-    font-size: calc(var(--fontSize) * 1);
-    letter-spacing: var(--letterSpacing);
-    font-weight: calc(var(--fontWeight)* 1);
+  .ordered-list {
+      list-style: decimal;
+  }
+  
+/*   
+Modifiers
+   */
+  
+  .float-left {
+      float: left;
+      margin-right: 1em;
+  }
+  
+  .float-right {
+      float: right;
+      margin-left: 1em;
+  }
+  
+  .text-left {
+      text-align: left !important;
+  }
+  
+  .text-center {
+      text-align: center !important;
+  }
+  
+  .text-right {
+      text-align: right !important;
+  }
+  
+  
+  /*
+  Object definitions
+   */
+  
+  .content {
+      margin: 0 auto;
+      width: 32em;
+  }
+  
+  .author-block {
+      border-top: 3px double var(--quiet-color);
+      margin-top: 4em;
   }
 
 .fixed {
@@ -120,7 +134,7 @@
     font-style: italic;
 }
 
-.bold {
+.bold, strong {
     font-weight: 600;
 }
 

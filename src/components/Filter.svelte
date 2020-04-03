@@ -3,6 +3,7 @@
     import { filters } from '../store.js';
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
+    let filterString;
 
     function filtered(tag, state) {
         dispatch('filtered', {tag, state});
@@ -15,13 +16,16 @@
         Show only
     </h2> -->
     <div class="buttons">
-        <span class="filters">
+        <div class="filters">
+        <strong>Show: </strong>
             {#if $filters.length > 0}
-                Filters: Showing {$filters.join(', ')}
+                {#each $filters as item}
+                    <span class="tag">{item}</span>
+                {/each}
             {:else}
-                 Filters: Showing all
+                 <span class="tag">All</span>
             {/if}
-        </span>
+        </div>
         <Button tag="heading" label="headings" icon="format-heading" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
         <Button tag="list" label="lists" icon="layout-list" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
         <Button tag="text" label="text" icon="format-text" on:filter={(event) => {filtered(event.detail.message, event.detail.state)}}/>
@@ -44,26 +48,28 @@
         margin-top: 3em;
     }
 
-    input[type="text"] {
-        width: 100%;
-        max-width: 280px;
-    }
-
     .buttons {
         display: flex;
         position: relative;
         align-items: center;
-        padding: 3.4em 0 1em 0;
-        border: 2px solid var(--table-header-bg);
+        padding: 1em 0 3.4em 0;
+        /* border: 2px solid var(--table-header-bg); */
         border-radius: 5px;
     }
 
-    .buttons > span {
+    .buttons > .filters {
         position: absolute;
-        top: 8px;
-        left: 0;
-        background: var(--table-header-bg);
-        color: var(--table-header-text);
-        padding: 2px 20px;
+        bottom: 8px;
+        left: 20px;
+        padding: 5px;
+    }
+
+    .filters > .tag {
+        background: var(--strong-accent-color);
+        color: #FFFFFF;
+        border-radius: 5px;
+        font-weight: 600;
+        margin: 0 5px;
+        padding: 2px 5px;
     }
 </style>

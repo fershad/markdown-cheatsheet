@@ -12,5 +12,12 @@
     footer {
         min-height: 10vh;
         padding: 1.5em 0;
+        width: 100%;
+        border-top: 1px solid var(--quiet-color);
+        background: var(--quiet-color);
+    }
+
+    footer > .container {
+        padding-top: 0;
     }
 </style>

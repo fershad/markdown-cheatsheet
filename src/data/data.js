@@ -37,7 +37,7 @@ let data = [
     genData('This [descriptive link][link] is shows different text to the reference.\n\n[link]: https://www.fershad.com', ['link', 'reference']),
     genData('This [numbered reference][1] is an easy way to repeatly [reference the same link][1].\n\n[1]: https://www.fershad.com', ['link', 'reference']),
     genData('`Back-ticks`', ['code', 'inline']),
-    genData('```Three back-ticks\ngives a code block```', ['code', 'block'], ['```javascript\nvar j = "Add a language name to facilitate highlighting.";\console.log(j);\n```']),
+    genData('```Three back-ticks\ngives a code block```', ['code', 'block'], ['```javascript\nvar j = "Add a language to facilitate highlighting.";\nconsole.log(j);\n```']),
     genData('> You can create blockquotes like this.', ['text', 'quotes', 'blockquote']),
     genData('Table | Heading | Row\n--- | --- | ---\n This is how | you can make | a table\nAll | text is | left-aligned', ['table']),
     genData('Table | Heading | Row\n--- | --- | :---:\n Use two colons | to center | text', ['table']),

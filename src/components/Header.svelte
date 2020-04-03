@@ -65,14 +65,14 @@
         </div>
     	<span class="toggle" on:click={toggle}>
             {#if darkMode }
-                <button in:fly="{{ x: 100, easing: sineOut, duration: 300, delay: 310 }}" 
-                        out:fly="{{ x: 100, easing: sineOut, duration: 300 }}"
+                <button in:fly="{{ x: 50, easing: sineOut, duration: 200, delay: 210 }}" 
+                        out:fly="{{ x: -50, easing: sineOut, duration: 200 }}"
                         aria-label="Switch to light mode">
                     <i class="gg-moon"></i>
                 </button>
             {:else}
-                <button in:fly="{{ x: -100, easing: sineOut, duration: 300, delay: 310 }}" 
-                        out:fly="{{ x: -100, easing: sineOut, duration: 300 }}"
+                <button in:fly="{{ x: -50, easing: sineOut, duration: 200, delay: 210 }}" 
+                        out:fly="{{ x: -50, easing: sineOut, duration: 200 }}"
                         aria-label="Switch to dark mode">
                         <i class="gg-sun"></i>
                 </button>
@@ -120,6 +120,7 @@
         border: none;
         border-radius: 5px;
         transition: transform 0.3s;
+        overflow: hidden;
     }
 
     i {
