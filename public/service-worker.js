@@ -6,7 +6,6 @@ var filesToCache = [
   "/build/bundle.js",
   "/build/bundle.css",
   "/fluidtype.css",
-  "https://css.gg/c?=|quote|code|display-grid|format-heading|format-text|layout-list|link|moon|sun|image|border-style-solid",
   "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Permanent+Marker&family=Source+Code+Pro&display=swap"
 ];
 self.addEventListener("install", function(e) {
