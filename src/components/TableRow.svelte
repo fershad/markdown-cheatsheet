@@ -79,15 +79,16 @@ import { onMount } from "svelte/internal";
     button {
         display: inline-flex;
         background: var(--background-color);
-        border: 2px solid var(--text-color);
+        border: none;
         margin-left: 20px;
         border-radius: 5px;
         transition: transform 0.3s;
-        color: var(--text-color);
+        color: var(--alternate-accent-color);
+        text-decoration: underline;
+        cursor: pointer;
 
         &.showAlt {
-            border-color: var(--alternate-accent-color);
-            background-color: var(--button-active-color);
+          color: var(--strong-accent-color); 
         }
     }
 

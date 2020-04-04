@@ -10,13 +10,13 @@
     }
 </script>
 
-<div class="filter">
+<div class="filter-holder">
     <!-- <input type="text" name="search" id="search"> -->
     <!-- <h2>
         Show only
     </h2> -->
-    <div class="buttons">
-        <div class="filters">
+    <div class="filter">
+        <div class="tags">
         <strong>Show: </strong>
             {#if $filters.length > 0}
                 {#each $filters as item}
@@ -38,33 +38,34 @@
 </div>
 
 <style>
-    .filter {
+    .filter-holder {
         width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         position: relative;
-        margin-top: 3em;
     }
 
-    .buttons {
+    .filter {
         display: flex;
         position: relative;
         align-items: center;
         padding: 1em 0 3.4em 0;
         /* border: 2px solid var(--table-header-bg); */
         border-radius: 5px;
+        flex-wrap: wrap;
     }
 
-    .buttons > .filters {
+
+    .filter > .tags {
         position: absolute;
         bottom: 8px;
         left: 20px;
         padding: 5px;
     }
 
-    .filters > .tag {
+    .tags > .tag {
         background: var(--strong-accent-color);
         color: #FFFFFF;
         border-radius: 5px;

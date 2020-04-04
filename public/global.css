@@ -391,7 +391,7 @@ body {
 	--background-color: #2b2c34;
 	--table-header-bg: var(--text-color);
 	--table-header-text: var(--background-color);
-	--box-shadow-rgba: rgba(0,0,0,0.11);
+	--box-shadow-rgba: rgba(0,0,0,1);
 }
 
 a {

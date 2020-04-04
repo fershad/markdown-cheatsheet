@@ -34,6 +34,12 @@ button {
     color: var(--text-color);
 }
 
+@media (max-width: 864px) {
+    button {
+        margin: 10px 20px;
+    }
+}
+
 button.active {
     transform: rotate(45deg);
     border-color: var(--alternate-accent-color);

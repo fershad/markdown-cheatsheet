@@ -65,14 +65,14 @@
         </div>
     	<span class="toggle" on:click={toggle}>
             {#if darkMode }
-                <button in:fly="{{ x: 50, easing: sineOut, duration: 200, delay: 210 }}" 
-                        out:fly="{{ x: -50, easing: sineOut, duration: 200 }}"
+                <button in:fly="{{ x: 25, easing: sineOut, duration: 100, delay: 110 }}" 
+                        out:fly="{{ x: 25, easing: sineOut, duration: 100 }}"
                         aria-label="Switch to light mode">
                     <i class="gg-moon"></i>
                 </button>
             {:else}
-                <button in:fly="{{ x: -50, easing: sineOut, duration: 200, delay: 210 }}" 
-                        out:fly="{{ x: -50, easing: sineOut, duration: 200 }}"
+                <button in:fly="{{ x: -25, easing: sineOut, duration: 100, delay: 110 }}" 
+                        out:fly="{{ x: -25, easing: sineOut, duration: 100 }}"
                         aria-label="Switch to dark mode">
                         <i class="gg-sun"></i>
                 </button>
@@ -84,7 +84,7 @@
 <style>
     header {
         width: 100%;
-        height: 10vh;
+        min-height: 10vh;
     }
 
     header > .container {
@@ -99,7 +99,6 @@
     }
 
     .header-title {
-        margin: 0;
         color: var(--text-color);
         font-family: 'Permanent Marker', cursive;
         font-display: swap;
@@ -109,7 +108,10 @@
         position: absolute;
         cursor: pointer;
         right: 20px;
+        top: 20px;
         overflow: hidden;
+        height: 60px;
+        width: 60px;
     }
 
     .toggle > button {
@@ -121,6 +123,7 @@
         border-radius: 5px;
         transition: transform 0.3s;
         overflow: hidden;
+        cursor: pointer;
     }
 
     i {
