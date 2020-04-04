@@ -36,7 +36,6 @@
         if (t == 'light') {
                 return false;
             } else if (t == 'dark') {
-                console.log('dark')
                 return true;
             } else {
                 return false;
@@ -62,6 +61,7 @@
         <div class="heading-wrapper">
     	    <h1 class="header-title">Markdown Cheatsheet</h1>
             <a href="https://www.markdownguide.org/getting-started/" class="bold">What is Markdown?</a>
+            <p>This cheat sheet is based on the <a href="https://commonmark.org/">CommonMark</a> specification.</p>
         </div>
     	<span class="toggle" on:click={toggle}>
             {#if darkMode }

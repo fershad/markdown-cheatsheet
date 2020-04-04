@@ -16,7 +16,11 @@ import { onMount } from "svelte/internal";
           <div class="md">
             <span class="tag" class:showAlt>
                 {#if showAlt}
-                    Alternative
+                    {#if data.alternate.length > 1}
+                      Alternatives   
+                    {:else}
+                      Alternative
+                    {/if}
                 {:else}
                     Markdown
                 {/if}
@@ -31,12 +35,21 @@ import { onMount } from "svelte/internal";
             {#if showAlt}
                 Show original
             {:else}
-                Show alternative
+                Show {#if data.alternate.length > 1}
+                      alternatives   
+                    {:else}
+                      alternative
+                    {/if}
             {/if}
            </button>
         {/if}
       </div>
-      <div class="result">{@html data.output}</div>
+      <div class="result-wrapper">
+      <span class="tag">Result</span>
+        <div class="result">
+             {@html data.output}
+        </div>
+      </div>
   </div>
 
   <style lang="scss">
@@ -54,58 +67,56 @@ import { onMount } from "svelte/internal";
               0 8px 16px var(--box-shadow-rgba);
 
    .result {
-      display: inline-flex;
       align-items: center;
       position: relative;
       padding: 3rem 1rem 1rem 1rem;
     }
 
-    .result:before {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        padding: 5px 15px;
-      }
       .main, .alt, .result {
         padding: 3em 1em 1em 1em;
         width: 100%;
         position: relative;
       }
+.result-wrapper {
+  position: relative;
+  .tag {
+        background: var(--alternate-accent-color);
+        color: #FFFFFF;
+    }
+}
 
+.tag {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        padding: 5px 15px;
+    }
 .md-wrapper {
     border-bottom: 2px solid var(--text-color);
     position: relative;
 
-    button {
+    .tag {
+        background: var(--strong-accent-color);
+        color: #FFFFFF;
+    }
+}
+
+button {
         display: inline-flex;
         background: var(--background-color);
         border: none;
-        margin-left: 20px;
+        margin-left: 1em;
         border-radius: 5px;
         transition: transform 0.3s;
         color: var(--alternate-accent-color);
         text-decoration: underline;
         cursor: pointer;
+        padding-left: 0;
 
-        &.showAlt {
+        &.showAlt, &.showHTML {
           color: var(--strong-accent-color); 
         }
     }
-
-    .tag {
-        position: absolute;
-        top: 10px;
-        left: 0;
-        padding: 5px 15px;
-        background: var(--strong-accent-color);
-        color: #FFFFFF;
-    }
-
-    .tag.showAlt {
-        background: var(--quiet-color);
-        color: var(--text-color);
-    }
-}
 
     .md {
       display: flex;
@@ -123,11 +134,6 @@ import { onMount } from "svelte/internal";
           display: block;
       }        
     }
-    .result:before {
-        content: 'Result';
-        background: var(--alternate-accent-color);
-        color: #FFFFFF;
-      }
 
     .result {
           min-height: 90px;

@@ -511,6 +511,8 @@ code {
 }
 
 .result blockquote {
-	padding: 2.5vw;
-    margin: 2%;
+	padding: 1em 0.7em;
+	margin: 2%;
+	border-left: 10px solid var(--alternate-accent-color);
+	background: var(--quiet-color);
 }
