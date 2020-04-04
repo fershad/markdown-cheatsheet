@@ -34,7 +34,7 @@ button {
     color: var(--text-color);
 }
 
-@media (max-width: 864px) {
+@media (max-width: 950px) {
     button {
         margin: 10px 20px;
     }
