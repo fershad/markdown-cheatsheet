@@ -63,7 +63,7 @@
             <a href="https://www.markdownguide.org/getting-started/" class="bold">What is Markdown?</a>
             <p>This cheat sheet is based on the <a href="https://commonmark.org/">CommonMark</a> specification.</p>
         </div>
-    	<span class="toggle" on:click={toggle}>
+    	<span class="toggle" on:click={toggle} on:keydown={toggle} tabindex="0">
             {#if darkMode }
                 <button in:fly="{{ x: 25, easing: sineOut, duration: 100, delay: 110 }}" 
                         out:fly="{{ x: 25, easing: sineOut, duration: 100 }}"
