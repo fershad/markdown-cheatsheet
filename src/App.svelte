@@ -2,10 +2,7 @@
 	import Header from './components/Header.svelte';
 	import Footer from './components/Footer.svelte';
 	import Table from './components/Table.svelte';
-	if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js');
-    }
-
+	import SW from './components/ServiceWorker.svelte';
 	window.addEventListener('beforeinstallprompt', e => {
         e.userChoice.then(choiceResult => {
           ga('send', 'event', 'Add to Homescreen', choiceResult.outcome);      
@@ -28,6 +25,7 @@
 <Footer />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Permanent+Marker&family=Source+Code+Pro&family=Cookie&display=swap"> 
 <link rel='stylesheet' href='/typography.css'>
+<SW />
 
 
 <style>
