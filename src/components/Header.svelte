@@ -59,7 +59,7 @@
 <header>
     <div class="container">
         <div class="heading-wrapper">
-    	    <h1 class="header-title">Markdown Cheatsheet</h1>
+    	    <h1 class="header-title"><span class="orange">Markdown</span> Cheat Sheet</h1>
             <a href="https://www.markdownguide.org/getting-started/" class="bold">What is Markdown?</a>
             <p>This cheat sheet is based on the <a href="https://commonmark.org/">CommonMark</a> specification.</p>
         </div>
@@ -102,6 +102,10 @@
         .heading-wrapper {
             margin-top: 40px;
         }
+    }
+
+    .orange {
+        color: var(--strong-accent-color);
     }
 
     .header-title {
