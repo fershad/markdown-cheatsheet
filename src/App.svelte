@@ -5,6 +5,12 @@
 	if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js');
     }
+
+	window.addEventListener('beforeinstallprompt', e => {
+        e.userChoice.then(choiceResult => {
+          ga('send', 'event', 'Add to Homescreen', choiceResult.outcome);      
+        });
+      });
 </script>
 
 <noscript>
@@ -22,6 +28,7 @@
 <Footer />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Permanent+Marker&family=Source+Code+Pro&family=Cookie&display=swap"> 
 <link rel='stylesheet' href='/typography.css'>
+
 
 <style>
 	main.container {
