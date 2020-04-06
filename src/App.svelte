@@ -20,8 +20,6 @@
 	<Table />
 </main>
 <Footer />
-<link rel='prefetch' href='/global.css'>
-<link rel='prefetch' href='/build/bundle.css'>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Permanent+Marker&family=Source+Code+Pro&family=Cookie&display=swap"> 
 <link rel='stylesheet' href='/typography.css'>
 
