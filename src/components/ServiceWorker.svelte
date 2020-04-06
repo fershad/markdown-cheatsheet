@@ -5,7 +5,7 @@ if ('serviceWorker' in navigator) {
 
 window.addEventListener('beforeinstallprompt', e => {
         e.userChoice.then(choiceResult => {
-          ga('send', 'event', 'Add to Homescreen', choiceResult.outcome);      
+          gtag('event', 'Install', {'event_category' : 'Add to Homescreen', 'event_label' : choiceResult.outcome});      
         });
       });
 
