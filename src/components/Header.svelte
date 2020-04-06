@@ -63,17 +63,19 @@
             <a href="https://www.markdownguide.org/getting-started/" class="bold">What is Markdown?</a>
             <p>This cheat sheet is based on the <a href="https://commonmark.org/">CommonMark</a> specification.</p>
         </div>
-    	<span class="toggle" on:click={toggle} on:keydown={toggle} tabindex="0">
+    	<span class="toggle">
             {#if darkMode }
                 <button in:fly="{{ x: 25, easing: sineOut, duration: 100, delay: 110 }}" 
                         out:fly="{{ x: 25, easing: sineOut, duration: 100 }}"
-                        aria-label="Switch to light mode">
+                        aria-label="Switch to light mode"
+                        on:click={toggle} on:keydown={toggle} tabindex="0">
                     <i class="gg-moon"></i>
                 </button>
             {:else}
                 <button in:fly="{{ x: -25, easing: sineOut, duration: 100, delay: 110 }}" 
                         out:fly="{{ x: -25, easing: sineOut, duration: 100 }}"
-                        aria-label="Switch to dark mode">
+                        aria-label="Switch to dark mode"
+                        on:click={toggle} on:keydown={toggle} tabindex="0">
                         <i class="gg-sun"></i>
                 </button>
             {/if}
