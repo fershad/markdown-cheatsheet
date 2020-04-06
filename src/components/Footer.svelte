@@ -4,7 +4,7 @@
 	<div class="container">
         <p>Build by <a href="//www.fershad.com">Fershad Irani</a> using <a href="//svelte.dev/">Svelte 3</a>. Icons from <a href="//css.gg">CSS.gg</a> | <a href="//github.com/fishintaiwan/markdown-cheatsheet">Source</a></p>
         <p>If you found this helpful then please consider buying me a coffee.</p>
-        <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/fishintaiwan"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:15px;font-size:28px;">Buy me a coffee</span></a>
+        <a class="bmc-button" rel="noopener" target="_blank" href="https://www.buymeacoffee.com/fishintaiwan"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:15px;font-size:28px;">Buy me a coffee</span></a>
     </div>
 </footer>
 
