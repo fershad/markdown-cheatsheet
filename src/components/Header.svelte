@@ -68,14 +68,14 @@
                 <button in:fly="{{ x: 25, easing: sineOut, duration: 100, delay: 110 }}" 
                         out:fly="{{ x: 25, easing: sineOut, duration: 100 }}"
                         aria-label="Switch to light mode"
-                        on:click={toggle} on:keydown={toggle} tabindex="0">
+                        on:click={toggle} tabindex="0">
                     <i class="gg-moon"></i>
                 </button>
             {:else}
                 <button in:fly="{{ x: -25, easing: sineOut, duration: 100, delay: 110 }}" 
                         out:fly="{{ x: -25, easing: sineOut, duration: 100 }}"
                         aria-label="Switch to dark mode"
-                        on:click={toggle} on:keydown={toggle} tabindex="0">
+                        on:click={toggle} tabindex="0">
                         <i class="gg-sun"></i>
                 </button>
             {/if}
