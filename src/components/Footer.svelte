@@ -1,4 +1,8 @@
-<script></script>
+<script>
+      if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js');
+    }
+</script>
 
 <footer>
 	<div class="container">

@@ -2,7 +2,6 @@
 	import Header from './components/Header.svelte';
 	import Footer from './components/Footer.svelte';
 	import Table from './components/Table.svelte';
-	import SW from './components/ServiceWorker.svelte';
 </script>
 
 <noscript>
@@ -17,10 +16,9 @@
 <main class="container">
 	<Table />
 </main>
-<Footer />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Permanent+Marker&family=Source+Code+Pro&family=Cookie&display=swap"> 
 <link rel='stylesheet' href='/typography.css'>
-<SW />
+<Footer />
 
 
 <style>
