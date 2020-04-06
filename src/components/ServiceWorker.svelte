@@ -15,7 +15,7 @@ window.addEventListener('load', () => {
         } else if (matchMedia('(display-mode: standalone)').matches) {
           gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'non-iOS'});
         } else {
-          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'non-iOS'});
+          gtag('event', 'Views', {'event_category' : 'Web'});
         }
       });
 </script>
