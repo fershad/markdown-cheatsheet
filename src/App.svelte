@@ -5,14 +5,11 @@
 	import SW from './components/ServiceWorker.svelte';
 	window.addEventListener('load', () => {
         if (navigator.standalone) {
-          ga('set', 'page', '/index.html?isPWA=true');
-          ga('send', 'pageview');
+          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'iOS'});
         } else if (matchMedia('(display-mode: standalone)').matches) {
-          ga('set', 'page', '/index.html?isPWA=true');
-          ga('send', 'pageview');
+          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'non-iOS'});
         } else {
-          ga('set', 'page', '/index.html?isPWA=false');
-          ga('send', 'pageview');
+          gtag('event', 'Views', {'event_category' : 'Web', 'event_label' : 'non-iOS'});
         }
       });
 
