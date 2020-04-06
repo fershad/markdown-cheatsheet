@@ -8,4 +8,14 @@ window.addEventListener('beforeinstallprompt', e => {
           ga('send', 'event', 'Add to Homescreen', choiceResult.outcome);      
         });
       });
+
+window.addEventListener('load', () => {
+        if (navigator.standalone) {
+          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'iOS'});
+        } else if (matchMedia('(display-mode: standalone)').matches) {
+          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'non-iOS'});
+        } else {
+          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'non-iOS'});
+        }
+      });
 </script>

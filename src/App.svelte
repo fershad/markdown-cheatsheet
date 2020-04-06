@@ -3,16 +3,6 @@
 	import Footer from './components/Footer.svelte';
 	import Table from './components/Table.svelte';
 	import SW from './components/ServiceWorker.svelte';
-	window.addEventListener('load', () => {
-        if (navigator.standalone) {
-          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'iOS'});
-        } else if (matchMedia('(display-mode: standalone)').matches) {
-          gtag('event', 'Views', {'event_category' : 'PWA', 'event_label' : 'non-iOS'});
-        } else {
-          gtag('event', 'Views', {'event_category' : 'Web', 'event_label' : 'non-iOS'});
-        }
-      });
-
 </script>
 
 <noscript>
