@@ -1,5 +1,6 @@
 /node_modules/
 /public/build/
+/src/assets/
 /src/components/Filter copy.svelte
 /src/components/Table copy.svelte
 
