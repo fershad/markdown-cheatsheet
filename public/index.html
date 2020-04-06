@@ -88,18 +88,6 @@
       gtag('js', new Date());
 
       gtag('config', 'UA-25246581-1');
-      window.addEventListener('load', () => {
-      if (navigator.standalone) {
-        ga('set', 'page', '/index.html?isPWA=true');
-        ga('send', 'pageview');
-      } else if (matchMedia('(display-mode: standalone)').matches) {
-        ga('set', 'page', '/index.html?isPWA=true');
-        ga('send', 'pageview');
-      } else {
-        ga('set', 'page', '/index.html?isPWA=false');
-        ga('send', 'pageview');
-      }
-    });
     </script>
 
 </head>

@@ -3,11 +3,19 @@
 	import Footer from './components/Footer.svelte';
 	import Table from './components/Table.svelte';
 	import SW from './components/ServiceWorker.svelte';
-	window.addEventListener('beforeinstallprompt', e => {
-        e.userChoice.then(choiceResult => {
-          ga('send', 'event', 'Add to Homescreen', choiceResult.outcome);      
-        });
+	window.addEventListener('load', () => {
+        if (navigator.standalone) {
+          ga('set', 'page', '/index.html?isPWA=true');
+          ga('send', 'pageview');
+        } else if (matchMedia('(display-mode: standalone)').matches) {
+          ga('set', 'page', '/index.html?isPWA=true');
+          ga('send', 'pageview');
+        } else {
+          ga('set', 'page', '/index.html?isPWA=false');
+          ga('send', 'pageview');
+        }
       });
+
 </script>
 
 <noscript>
