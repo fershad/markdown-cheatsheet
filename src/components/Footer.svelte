@@ -4,7 +4,7 @@
 	<div class="container">
         <p>Build by <a href="//www.fershad.com">Fershad Irani</a> using <a href="//svelte.dev/">Svelte 3</a>. Icons from <a href="//css.gg">CSS.gg</a> | <a href="//github.com/fishintaiwan/markdown-cheatsheet">Source</a></p>
         <p>If you found this helpful then please consider buying me a coffee.</p>
-        <style>.bmc-button img{height: 34px !important;width: 35px !important;margin-bottom: 1px !important;border: none !important;vertical-align: middle !important;}.bmc-button{padding: 7px 10px 7px 10px !important;line-height: 35px !important;height:51px !important;min-width:217px !important;text-decoration: none !important;display:inline-flex !important;color:#ffffff !important;background-color:#FF813F !important;border-radius: 5px !important;border: 1px solid transparent !important;padding: 7px 10px 7px 10px !important;font-size: 28px !important;letter-spacing:0.6px !important;margin: 0 auto !important;font-family:'Cookie', cursive !important;box-sizing: border-box !important;-o-transition: 0.3s all linear !important;-webkit-transition: 0.3s all linear !important;-moz-transition: 0.3s all linear !important;-ms-transition: 0.3s all linear !important;transition: 0.3s all linear !important;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {text-decoration: none !important;;opacity: 0.85 !important;color:#ffffff !important;}</style><link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet"><a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/fishintaiwan"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:15px;font-size:28px !important;">Buy me a coffee</span></a>
+        <a class="bmc-button" target="_blank" href="https://www.buymeacoffee.com/fishintaiwan"><img src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg" alt="Buy me a coffee"><span style="margin-left:15px;font-size:28px;">Buy me a coffee</span></a>
     </div>
 </footer>
 
@@ -20,4 +20,7 @@
     footer > .container {
         padding-top: 0;
     }
+
+    .bmc-button img{height: 34px;width: 35px;margin-bottom: 1px;border: none;vertical-align: middle;}.bmc-button{padding: 7px 10px 7px 10px;line-height: 35px;height:51px;min-width:217px;text-decoration: none;display:inline-flex;color:#ffffff;background-color:#FF813F;border-radius: 5px;border: 1px solid transparent;padding: 7px 10px 7px 10px;font-size: 28px;letter-spacing:0.6px;margin: 0 auto;font-family:'Cookie', cursive;box-sizing: border-box;-o-transition: 0.3s all linear;-webkit-transition: 0.3s all linear;-moz-transition: 0.3s all linear;-ms-transition: 0.3s all linear;transition: 0.3s all linear;}.bmc-button:hover, .bmc-button:active, .bmc-button:focus {text-decoration: none;;opacity: 0.85;color:#ffffff;}
+
 </style>
