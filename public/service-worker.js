@@ -8,7 +8,7 @@ var cacheFiles = [
   "/build/bundle.js",
   "/build/bundle.css",
   "/typography.css",
-  "/assets/icons/",
+  "/assets/icons",
   "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&family=Permanent+Marker&family=Source+Code+Pro&family=Cookie&display=swap"
 ];
 
