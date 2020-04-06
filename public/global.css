@@ -340,7 +340,6 @@
   [hidden] {
 	display: none;
   }
-  /*# sourceMappingURL=reset.css.map */
 
 :root {
 	--background-color: #F2F6F1;
@@ -472,6 +471,13 @@ hr {
 	}
 }
 
+@media (max-width: 600px) {
+	.container {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
   table {
     width: 100%;
     border-collapse: collapse;
@@ -516,3 +522,293 @@ code {
 	border-left: 10px solid var(--alternate-accent-color);
 	background: var(--quiet-color);
 }
+
+/* ICONS */
+.gg-border-style-solid {
+	transform:scale(var(--ggs,1));
+   }
+   .gg-border-style-solid,
+   .gg-border-style-solid::before {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	width:26px;
+	height:17px
+   }
+   .gg-border-style-solid::before {
+	content:"";
+	position:absolute;
+	height:2px;
+	top:7px;
+	border-top:2px solid
+   }
+   .gg-code {
+	transform:scale(var(--ggs,1))
+   }
+   .gg-code,
+   .gg-code::after,
+   .gg-code::before {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	width:8px;
+	height:20px
+   }
+   .gg-code::after,
+   .gg-code::before {
+	content:"";
+	position:absolute;
+	height:8px;
+	border-left:2px solid;
+	border-bottom:2px solid;
+	transform:rotate(45deg) scaleY(1);
+	left:-4px;
+	top:6px
+   }
+   .gg-code::after {
+	transform:rotate(-45deg) scaleX(-1);
+	left:4px
+   }
+   .gg-display-grid {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	transform:scale(var(--ggs,1));
+	height:14px;
+	width:14px;
+	border:2px solid transparent;
+	box-shadow:0 0 0 2px
+   }
+   .gg-display-grid::after,
+   .gg-display-grid::before {
+	content:"";
+	display:block;
+	box-sizing:border-box;
+	position:absolute;
+	width:10px;
+	height:4px;
+	border-right:4px solid;
+	border-left:4px solid;
+	top:0;
+	left:0
+   }
+   .gg-display-grid::before {
+	top:6px
+   }
+   .gg-format-heading {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	transform:scale(var(--ggs,1));
+	width:12px;
+	height:14px;
+	border-left:2px solid;
+	border-right:2px solid
+   }
+   .gg-format-heading::after {
+	content:"";
+	display:block;
+	box-sizing:border-box;
+	position:absolute;
+	width:12px;
+	height:2px;
+	background:currentColor;
+	top:6px;
+	left:-2px
+   }
+   .gg-format-text {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	transform:scale(var(--ggs,1));
+	width:10px;
+	height:8px;
+	border-left:4px solid transparent;
+	border-right:4px solid transparent;
+	box-shadow:0 -2px 0 0,inset 0 0 0 2px
+   }
+   .gg-format-text::after {
+	content:"";
+	display:block;
+	box-sizing:border-box;
+	position:absolute;
+	width:18px;
+	height:18px;
+	border:1px dashed;
+	top:-6px;
+	left:-8px
+   }
+   .gg-image {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	transform:scale(var(--ggs,1));
+	width:20px;
+	height:16px;
+	overflow:hidden;
+	box-shadow:0 0 0 2px;
+	border-radius:2px
+   }
+   .gg-image::after,
+   .gg-image::before {
+	content:"";
+	display:block;
+	box-sizing:border-box;
+	position:absolute;
+	border:2px solid
+   }
+   .gg-image::after {
+	transform:rotate(45deg);
+	border-radius:3px;
+	width:16px;
+	height:16px;
+	top:9px;
+	left:6px
+   }
+   .gg-image::before {
+	width:6px;
+	height:6px;
+	border-radius:100%;
+	top:2px;
+	left:2px
+   }
+   .gg-layout-list {
+	transform:scale(var(--ggs,1))
+   }
+   .gg-layout-list,
+   .gg-layout-list::after,
+   .gg-layout-list::before {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	width:10px;
+	height:2px;
+	border-left:6px double;
+	border-right:4px solid
+   }
+   .gg-layout-list::after,
+   .gg-layout-list::before {
+	content:"";
+	position:absolute;
+	left:-6px
+   }
+   .gg-layout-list::after {
+	bottom:4px
+   }
+   .gg-layout-list::before {
+	top:4px
+   }
+   .gg-link {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	transform:rotate(-45deg) scale(var(--ggs,1));
+	width:8px;
+	height:2px;
+	background:currentColor;
+	border-radius:4px
+   }
+   .gg-link::after,
+   .gg-link::before {
+	content:"";
+	display:block;
+	box-sizing:border-box;
+	position:absolute;
+	border-radius:3px;
+	width:8px;
+	height:10px;
+	border:2px solid;
+	top:-4px
+   }
+   .gg-link::before {
+	border-right:0;
+	border-top-left-radius:40px;
+	border-bottom-left-radius:40px;
+	left:-6px
+   }
+   .gg-link::after {
+	border-left:0;
+	border-top-right-radius:40px;
+	border-bottom-right-radius:40px;
+	right:-6px
+   }
+   .gg-moon,
+   .gg-moon::after {
+	display:block;
+	box-sizing:border-box;
+	border-radius:50%
+   }
+   .gg-moon {
+	overflow:hidden;
+	position:relative;
+	transform:rotate(-135deg) scale(var(--ggs,1));
+	width:20px;
+	height:20px;
+	border:2px solid;
+	border-bottom-color:transparent
+   }
+   .gg-moon::after {
+	content:"";
+	position:absolute;
+	width:12px;
+	height:18px;
+	border:2px solid transparent;
+	box-shadow:0 0 0 2px;
+	top:8px;
+	left:2px
+   }
+   .gg-quote {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	transform:scale(var(--ggs,1));
+	width:20px;
+	height:18px;
+	border:2px solid transparent;
+	border-radius:2px
+   }
+   .gg-quote::before {
+	content:"";
+	display:block;
+	box-sizing:border-box;
+	position:absolute;
+	width:8px;
+	height:6px;
+	border-left:3px solid;
+	border-right:3px solid;
+	left:4px;
+	top:4px;
+	transform:skewX(-20deg)
+   }
+   .gg-sun {
+	box-sizing:border-box;
+	position:relative;
+	display:block;
+	transform:scale(var(--ggs,1));
+	width:24px;
+	height:24px;
+	background:linear-gradient(to bottom,currentColor 4px,transparent 0)no-repeat 5px -6px/2px 6px,linear-gradient(to bottom,currentColor 4px,transparent 0)no-repeat 5px 14px/2px 6px,linear-gradient(to bottom,currentColor 4px,transparent 0)no-repeat -8px 5px/6px 2px,linear-gradient(to bottom,currentColor 4px,transparent 0)no-repeat 14px 5px/6px 2px;
+	border-radius:100px;
+	box-shadow:inset 0 0 0 2px;
+	border:6px solid transparent
+   }
+   .gg-sun::after,
+   .gg-sun::before {
+	content:"";
+	display:block;
+	box-sizing:border-box;
+	position:absolute;
+	width:24px;
+	height:2px;
+	border-right:4px solid;
+	border-left:4px solid;
+	left:-6px;
+	top:5px
+   }
+   .gg-sun::before {
+	transform:rotate(-45deg)
+   }
+   .gg-sun::after {
+	transform:rotate(45deg)
+   }
+   

@@ -58,6 +58,12 @@
         flex-wrap: wrap;
     }
 
+    @media (max-width: 600px) {
+        .filter {
+            justify-content: center;
+        }
+    }
+
 
     .filter > .tags {
         position: absolute;

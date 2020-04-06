@@ -98,6 +98,12 @@
         text-align: center;
     }
 
+    @media (max-width: 600px) {
+        .heading-wrapper {
+            margin-top: 40px;
+        }
+    }
+
     .header-title {
         color: var(--text-color);
         font-family: 'Permanent Marker', cursive;
