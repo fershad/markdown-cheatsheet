@@ -22,7 +22,7 @@
     "svelte-preprocess": "^3.7.1"
   },
   "dependencies": {
-    "marked": "^0.8.2",
+    "marked": "^4.0.10",
     "sirv-cli": "^0.4.4"
   }
 }
